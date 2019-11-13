@@ -1,0 +1,4 @@
+/mysql/lib
+/mysql/sql/*
+/php/log
+/phpmyadmin/sessions
