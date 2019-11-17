@@ -21,3 +21,28 @@ if ($result = $mysqli->query($sql)) {
 }
 
 $mysqli->close();
+
+trait Ttt {
+    public $ttt = "TTT";
+}
+
+class Hoge {
+    use Ttt;
+    public $aaa = "AAA";
+    private $bbb = "BBB";
+    protected $ccc = "CCC";
+    public $ddd = "DDD";
+    const EEE = "EEE";
+
+    public function test1() {
+        foreach($this as $key => $value) {
+            echo "${key} => ${value}";
+        }
+    }
+}
+$hoge = new Hoge();
+$hoge->test1();
+
+foreach($hoge as $key => $value) {
+    echo "${key} => ${value}";
+}
